@@ -46,6 +46,21 @@ let units = [
 
 let value = prompt("enter your num");
 let valueArray = value.split("");
+
+let lastElement = valueArray[valueArray.length - 1];
+let penultimateElement = valueArray[valueArray.length - 2];
+
+let uan = "гривня.";
+if (lastElement == 0 || (lastElement >= 5 && lastElement <= 9)) {
+  uan = "гривень.";
+} else if (lastElement >= 2 && lastElement <= 4 && penultimateElement != 1) {
+  uan = "гривні.";
+} else if (penultimateElement == 1) {
+  uan = "гривнень.";
+} else {
+  uan = "гривня.";
+}
+
 let unitsValue, dozensValue, from10to19Value, hundredsValue;
 
 if (
@@ -65,11 +80,12 @@ if (
   );
 } else if (valueArray.length === 1) {
   unitsValue = value[0];
+
   document.write(
     `
      <div class="container">
         <span>
-          ${units[unitsValue]} <small>грн.</small>
+          ${units[unitsValue]} <small>${uan}</small>
         </span
      div>
     `
@@ -80,7 +96,7 @@ if (
     `
     <div>
       <span>
-        ${from10to19[from10to19Value]} <small>грн.</small>
+        ${from10to19[from10to19Value]} <small>${uan}</small>
       </span>
     </div>
     `
@@ -93,7 +109,7 @@ if (
     `
     <div>
       <span>
-        ${dozens[dozensValue]} ${units[unitsValue]} <small>грн.</small>
+        ${dozens[dozensValue]} ${units[unitsValue]} <small>${uan}</small>
       </span>
     </div>
     `
@@ -106,7 +122,7 @@ if (
     `
     <div>
       <span>
-        ${dozens[dozensValue]} <small>грн.</small>
+        ${dozens[dozensValue]} <small>${uan}</small>
       </span>
     </div>
     `
@@ -120,7 +136,7 @@ if (
     `
     <div>
       <span>
-        ${hundreds[hundredsValue]} ${from10to19[unitsValue]} <small>грн.</small>
+        ${hundreds[hundredsValue]} ${from10to19[unitsValue]} <small>${uan}</small>
       </span>
     </div>
     `
@@ -139,7 +155,7 @@ if (
     `
     <div>
       <span>
-        ${hundreds[hundredsValue]} ${dozens[dozensValue]} ${units[unitsValue]} <small>грн.</small>
+        ${hundreds[hundredsValue]} ${dozens[dozensValue]} ${units[unitsValue]} <small>${uan}</small>
       </span>
     </div>
     `
@@ -157,7 +173,7 @@ if (
     `
     <div>
       <span>
-        ${hundreds[hundredsValue]} ${dozens[dozensValue]} <small>грн.</small>
+        ${hundreds[hundredsValue]} ${dozens[dozensValue]} <small>${uan}</small>
       </span>
     </div>
     `
@@ -169,7 +185,7 @@ if (
     `
     <div>
       <span>
-        ${hundreds[hundredsValue]} <small>грн.</small>
+        ${hundreds[hundredsValue]} <small>${uan}</small>
       </span>
     </div>
     `
@@ -181,7 +197,7 @@ if (
     `
     <div>
       <span>
-        ${hundreds[hundredsValue]} ${units[unitsValue]} <small>грн.</small>
+        ${hundreds[hundredsValue]} ${units[unitsValue]} <small>${uan}</small>
       </span>
     </div>
     `
