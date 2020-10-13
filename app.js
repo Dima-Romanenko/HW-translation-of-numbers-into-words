@@ -33,8 +33,8 @@ let from10to19 = [
 ];
 let units = [
   "нуль",
-  "один",
-  "два",
+  "одна",
+  "дві",
   "три",
   "чотири",
   "п'ять",
@@ -54,14 +54,22 @@ if (
   !isFinite(value) ||
   valueArray.length > 3
 ) {
-  console.log("error");
+  document.write(
+    `
+    <div>
+      <span class="warning">
+        Введіть коректні данні!
+      </span>
+    </div>
+    `
+  );
 } else if (valueArray.length === 1) {
   unitsValue = value[0];
   document.write(
     `
      <div class="container">
         <span>
-          ${units[unitsValue]}
+          ${units[unitsValue]} <small>грн.</small>
         </span
      div>
     `
@@ -72,7 +80,7 @@ if (
     `
     <div>
       <span>
-        ${from10to19[from10to19Value]}
+        ${from10to19[from10to19Value]} <small>грн.</small>
       </span>
     </div>
     `
@@ -85,7 +93,7 @@ if (
     `
     <div>
       <span>
-        ${dozens[dozensValue]} ${units[unitsValue]}
+        ${dozens[dozensValue]} ${units[unitsValue]} <small>грн.</small>
       </span>
     </div>
     `
@@ -98,7 +106,7 @@ if (
     `
     <div>
       <span>
-        ${dozens[dozensValue]}
+        ${dozens[dozensValue]} <small>грн.</small>
       </span>
     </div>
     `
@@ -112,7 +120,7 @@ if (
     `
     <div>
       <span>
-        ${hundreds[hundredsValue]} ${from10to19[unitsValue]}
+        ${hundreds[hundredsValue]} ${from10to19[unitsValue]} <small>грн.</small>
       </span>
     </div>
     `
@@ -131,7 +139,7 @@ if (
     `
     <div>
       <span>
-        ${hundreds[hundredsValue]} ${dozens[dozensValue]} ${units[unitsValue]}
+        ${hundreds[hundredsValue]} ${dozens[dozensValue]} ${units[unitsValue]} <small>грн.</small>
       </span>
     </div>
     `
@@ -149,7 +157,7 @@ if (
     `
     <div>
       <span>
-        ${hundreds[hundredsValue]} ${dozens[dozensValue]}
+        ${hundreds[hundredsValue]} ${dozens[dozensValue]} <small>грн.</small>
       </span>
     </div>
     `
@@ -161,7 +169,7 @@ if (
     `
     <div>
       <span>
-        ${hundreds[hundredsValue]}
+        ${hundreds[hundredsValue]} <small>грн.</small>
       </span>
     </div>
     `
@@ -173,7 +181,7 @@ if (
     `
     <div>
       <span>
-        ${hundreds[hundredsValue]} ${units[unitsValue]}
+        ${hundreds[hundredsValue]} ${units[unitsValue]} <small>грн.</small>
       </span>
     </div>
     `
